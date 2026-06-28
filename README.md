@@ -25,10 +25,11 @@ A responsive and interactive Music Player built using **HTML**, **CSS**, and **J
 
 #🌟 Future Enhancements
 
-Playlist support
-Shuffle and repeat modes
-Dark/Light theme
-Download songs option
-Local storage support
+
+Playlist support ,
+Shuffle and repeat modes , 
+Dark/Light theme ,
+Download songs option ,
+Local storage support.
 
 
