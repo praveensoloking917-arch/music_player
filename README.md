@@ -19,9 +19,16 @@ A responsive and interactive Music Player built using **HTML**, **CSS**, and **J
 
 ## 🛠️ Technologies Used
 
-
-- HTML5
+ HTML5
 - CSS3
-- JavaScript (ES6)
+- JavaScript
+
+#🌟 Future Enhancements
+
+Playlist support
+Shuffle and repeat modes
+Dark/Light theme
+Download songs option
+Local storage support
 
 
