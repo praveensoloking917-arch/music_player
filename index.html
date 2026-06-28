@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SK-Music Player</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="image/download.png">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="player-wrap">
+  <div class="card" id="card">
+
+    <!-- Header -->
+    <div class="header">
+      <span class="logo">◈ soloking</span>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="status-pill" id="statusPill">Paused</span>
+        <button class="queue-btn" id="queueBtn" title="Toggle Playlist">☰</button>
+      </div>
+    </div>
+
+    <!-- Record -->
+    <div class="record-stage" id="recordStage">
+      <div class="record" id="record">
+        <div class="record-label" id="recordLabel">
+          <div class="record-label-fallback" id="labelFallback">♪</div>
+        </div>
+        <div class="record-hole"></div>
+      </div>
+      <div class="record-glow"></div>
+      <!-- Tonearm SVG -->
+      <div class="tonearm-wrap" id="tonearm">
+        <svg viewBox="0 0 60 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="48" cy="12" r="7" fill="#2A2A3E" stroke="#F5A623" stroke-width="1.5"/>
+          <circle cx="48" cy="12" r="3" fill="#F5A623" opacity="0.6"/>
+          <line x1="48" y1="19" x2="14" y2="100" stroke="#9999AA" stroke-width="1.8" stroke-linecap="round"/>
+          <rect x="10" y="98" width="8" height="12" rx="2" fill="#6B6B8A" transform="rotate(-15 10 98)"/>
+          <circle cx="14" cy="108" r="3" fill="#F5A623" opacity="0.5"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Track Info -->
+    <div class="track-info">
+      <div class="track-title" id="trackTitle">Loading…</div>
+      <div class="track-artist">by <span id="trackArtist">—</span></div>
+    </div>
+
+    <!-- Progress -->
+    <div class="progress-area">
+      <div class="progress-track" id="progressTrack">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <div class="time-row">
+        <span id="timeElapsed">0:00</span>
+        <span id="timeDuration">0:00</span>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button class="ctrl-btn sm" id="shuffleBtn" title="Shuffle">⇌</button>
+      <button class="ctrl-btn md" id="prevBtn" title="Previous">⏮</button>
+      <button class="play-btn"   id="playBtn"  title="Play/Pause">▶</button>
+      <button class="ctrl-btn md" id="nextBtn" title="Next">⏭</button>
+      <button class="ctrl-btn sm" id="repeatBtn" title="Repeat">↻</button>
+    </div>
+
+    <!-- Volume -->
+    <div class="volume-row">
+      <span class="vol-icon" id="volIcon" title="Mute">🔉</span>
+      <input type="range" class="volume-slider" id="volSlider" min="0" max="100" value="75">
+      <span class="vol-pct" id="volPct">75%</span>
+    </div>
+
+    <!-- Autoplay -->
+    <div class="top-row">
+      <div class="autoplay-badge on" id="autoplayBtn">
+        <div class="dot"></div>
+        Autoplay
+      </div>
+      <div style="font-size:11px;color:var(--muted);font-family:'Space Grotesk',sans-serif">
+        Track <span id="trackNum">1</span> of <span id="trackTotal">—</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Playlist Panel -->
+  <div class="playlist-panel" id="playlistPanel">
+    <div class="playlist-inner">
+      <div class="playlist-header">Up Next</div>
+      <div id="playlistItems"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Hidden Audio Element -->
+<audio id="audioEl" preload="metadata"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
